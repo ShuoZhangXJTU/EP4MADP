@@ -32,6 +32,11 @@ This tutorial gives a detailed procedure of changing the domains on MultiWOZ age
     belief state is modeled as a 0/1 vector representing all the slots, where 1 reprensents value is not None.
     2. filter out ***self.da_voc*** and ***self.da_voc_opp***, opp means opposite role (e.g., user to agent), 
     this will result in different action space (vector) and state space (because state contains actions)
+    ```
+        needed_domain = {'Restaurant', 'Hotel', 'general', 'Booking'}  # general and Booking is a must have in most cases
+        self.da_voc = [x for x in self.da_voc if x.split('-')[0] in needed_domain]
+        self.da_voc_opp = [x for x in self.da_voc_opp if x.split('-')[0] in needed_domain]
+    ```
 
 ## Modification: DST
   - convlab2\dst\rule\multiwoz\dst.py
