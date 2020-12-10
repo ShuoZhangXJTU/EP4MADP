@@ -5,23 +5,23 @@ This tutorial gives a detailed procedure of changing the domains on MultiWOZ age
 [toc]
 
 - Modification on: Goal 
-  **convlab2\task\multiwoz\goal_generator.py**
+  convlab2\task\multiwoz\goal_generator.py
   1. line 16, modify domains 
   2. line 172, in GoalGenerator, modify self.domain_ordering_dist
-    ```
-    #-------- Reformulate the Rest Domains ----------
-    #-- filter using ones
-    target_domains = {'restaurant', 'hotel'}
-    target_dod = deepcopy(self.domain_ordering_dist)
-    for key_, prob_ in self.domain_ordering_dist.items():
-        if not set(key_).issubset(target_domains):
-            del target_dod[key_]
-    #-- recalculate prob
-    sum_prob = sum(list(target_dod.values()))
-    for key_, ori_prob_ in target_dod.items():
-        target_dod[key_] = ori_prob_ / sum_prob
-    self.domain_ordering_dist = target_dod
-    #-------------------------------------------------
+     ```
+     #-------- Reformulate the Rest Domains ----------
+     #-- filter using ones
+     target_domains = {'restaurant', 'hotel'}
+     target_dod = deepcopy(self.domain_ordering_dist)
+     for key_, prob_ in self.domain_ordering_dist.items():
+         if not set(key_).issubset(target_domains):
+             del target_dod[key_]
+     #-- recalculate prob
+     sum_prob = sum(list(target_dod.values()))
+     for key_, ori_prob_ in target_dod.items():
+         target_dod[key_] = ori_prob_ / sum_prob
+     self.domain_ordering_dist = target_dod
+     #-------------------------------------------------
     ```
         
 
