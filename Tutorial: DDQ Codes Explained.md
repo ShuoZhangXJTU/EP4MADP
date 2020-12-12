@@ -6,11 +6,11 @@
   The dataset is partly drived from DSTC-8
   See: ***src\deep_dialog\data***
   
-  * [Goal]
+  * **Goal** 
       ***goal_set*** is ***{'train': [], 'valid': [], 'test': [], 'all': []}***, 
       with element as ***{'request_slots': {slot:val, ...}, 'diaact': 'request', 'inform_slots': {slot:val, ...}}***
 
-  * **Knowledge Base (KB): ** 
+  * **Knowledge Base (KB): **  
       ***movie_kb*** is ***{ID:{slot:val, ...}}***
   
   * **Act / Slot Set: ** 
