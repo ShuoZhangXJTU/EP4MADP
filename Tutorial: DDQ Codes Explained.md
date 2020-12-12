@@ -51,10 +51,17 @@
   * **warm_start_simulation** 
   
       This is used to boost ***world_model***
-      1. ***record_training_data*** and ***record_training_data_for_user***
+      1. set to use ***RuleSimulator*** as env
+      2. ***record_training_data*** and ***record_training_data_for_user*** 
+      3. train ***world_model*** if ***param: boosted***
+  
+  * **simulation_epoch_for_training** 
+  
+      This is used perform <font color='red'> Planning </font>, set ***param: grounded***
+      1. set to use ***RuleSimulator*** as env at first episode, then all set to ***world_model***
+      ***record_training_data*** and ***record_training_data_for_user***
       2. train ***world_model*** if para: boosted
-  
-  
+
  
 ## Models
   This section gives a detailed look at each model.
