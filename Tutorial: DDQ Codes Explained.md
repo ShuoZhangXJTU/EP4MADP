@@ -27,4 +27,10 @@
 
 ## Major Procedure
   See: ***src\run.py***
-  1. 
+  
+  1. Load Data: goal, kb, act/slot set, dictionary
+  2. Set ***AgentDQN*** as agent, ***RuleSimulator*** as env  
+  3. Set planning for agent with world model ***ModelBasedSimulator***
+  4. Set ***DialogManager*** with agent, env, world, act_set, slot_set, kb
+  5. Start ***run_episodes***
+    5.1. asd
