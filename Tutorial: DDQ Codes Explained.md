@@ -21,7 +21,7 @@
       
       ***slot_set*** is ***{slot: ID, ...}***
 
-  * ***Dictionary***
+  * **Dictionary**
       
       ***movie_dictionary*** is ***{slot: val_list}***
 
