@@ -39,4 +39,8 @@
           1. test current DQN 
           2. ***simulation_epoch_for_training***
           3. ***simulation_epoch***
+          4. if simulation success > current best and threshold, then ***simulation_epoch_for_training***
+          5. update best if needed
+          6. agent ***train*** and ***reset_dqn_target***
+          7. train ***world_model*** if set to
   
