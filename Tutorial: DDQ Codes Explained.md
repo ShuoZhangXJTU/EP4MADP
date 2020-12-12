@@ -9,13 +9,13 @@
   
   * **Goal** 
   
-      `goal_set` is ***{'train': [], 'valid': [], 'test': [], 'all': []}***
+      `goal_set` is `{'train': [], 'valid': [], 'test': [], 'all': []}`
       
-      element as ***{'request_slots': {slot:val, ...}, 'diaact': 'request', 'inform_slots': {slot:val, ...}}***
+      element as `{'request_slots': {slot:val, ...}, 'diaact': 'request', 'inform_slots': {slot:val, ...}}`
 
   * **Knowledge Base (KB)**  
   
-      ***movie_kb*** is ***{ID:{slot:val, ...}}***
+      ``movie_kb`` is ***{ID:{slot:val, ...}}***
   
   * **Act / Slot Set** 
   
