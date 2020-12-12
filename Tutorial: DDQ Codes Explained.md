@@ -34,4 +34,9 @@
   3. Set planning for agent with world model ***ModelBasedSimulator***
   4. Set ***DialogManager*** with agent, env, world, act_set, slot_set, kb
   5. Start ***run_episodes***
+      1. ***warm_start_simulation*** if possible
+      2. train loop episodes
+          1. test current DQN 
+          2. ***simulation_epoch_for_training***
+          3. ***simulation_epoch***
   
