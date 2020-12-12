@@ -1,4 +1,4 @@
-# Tutorial: Domain Reduction 
+# Tutorial: Convlab-2 Domain Modification 
 This tutorial gives a detailed procedure of changing the domains on MultiWOZ agenda-based user simulator in Convlab-2.
 
 
