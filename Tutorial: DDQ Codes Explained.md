@@ -5,21 +5,27 @@
 ## Dataset Explained
   The dataset is partly drived from DSTC-8
   See: ***src\deep_dialog\data***
-  * Goal 
+  
+  * **Goal** 
+  
       Goal is loaded from ***user_goals_first_turn_template.part.movie.v1.new.p***
 
       ***goal_set*** has a form of ***{'train': [], 'valid': [], 'test': [], 'all': []}***, 
       with element as ***{'request_slots': {slot:val, ...}, 'diaact': 'request', 'inform_slots': {slot:val, ...}}***
 
-  * Knowledge Base (KB) 
+  * **Knowledge Base (KB)** 
+  
       KB is loaded from ***movie_kb.1k.new.p***
+      
       ***movie_kb*** has a form of ***{ID:{slot:val, ...}}***
   
-  * Knowledge Base (KB) 
-      KB is loaded from ***movie_kb.1k.new.p***
-      ***movie_kb*** has a form of ***{ID:{slot:val, ...}}***
+  * **Act / Slot Set** 
+  
+      ***act_set*** is ***{intent: ID, ...}***
+      
+      ***slot_set*** is ***{slot: ID, ...}***
 
-  * Dictionary
+  * ***Dictionary***
       See 
 
 ## Major Procedure
