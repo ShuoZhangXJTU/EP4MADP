@@ -6,23 +6,18 @@
   The dataset is partly drived from DSTC-8
   See: ***src\deep_dialog\data***
   
-  * **Goal** 
-
+  * **Goal: **
       ***goal_set*** is ***{'train': [], 'valid': [], 'test': [], 'all': []}***, 
       with element as ***{'request_slots': {slot:val, ...}, 'diaact': 'request', 'inform_slots': {slot:val, ...}}***
 
-  * **Knowledge Base (KB)** 
-      
+  * **Knowledge Base (KB): ** 
       ***movie_kb*** is ***{ID:{slot:val, ...}}***
   
-  * **Act / Slot Set** 
-  
-      ***act_set*** is ***{intent: ID, ...}***
-      
+  * **Act / Slot Set: ** 
+      ***act_set*** is ***{intent: ID, ...}***,
       ***slot_set*** is ***{slot: ID, ...}***
 
-  * **Dictionary**
-      
+  * **Dictionary: **
       ***movie_dictionary*** is ***{slot: val_list}***
 
 ## Major Procedure
@@ -33,4 +28,4 @@
   3. Set planning for agent with world model ***ModelBasedSimulator***
   4. Set ***DialogManager*** with agent, env, world, act_set, slot_set, kb
   5. Start ***run_episodes***
-    5.1. asd
+      *asdasd
