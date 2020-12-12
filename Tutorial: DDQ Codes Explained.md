@@ -9,7 +9,7 @@
   
   * **Goal** 
   
-      ***goal_set*** is ***{'train': [], 'valid': [], 'test': [], 'all': []}***
+      'goal_set' is ***{'train': [], 'valid': [], 'test': [], 'all': []}***
       
       element as ***{'request_slots': {slot:val, ...}, 'diaact': 'request', 'inform_slots': {slot:val, ...}}***
 
