@@ -28,7 +28,7 @@
       `movie_dictionary` is `{slot: val_list}`
 
 ## Major Procedure
-  This section gives an overview of `src\run.py`
+  This section gives an overview of `src\run.py`, note every time, we train in single domain, not joint space.
   
   1. Load Data: goal, kb, act/slot set, dictionary
   2. Set `AgentDQN` as agent, `RuleSimulator` as env  
