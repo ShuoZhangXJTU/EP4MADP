@@ -1,15 +1,15 @@
 # Tutorial: DDQ Codes Explained
-  This tutorial explain the DDQ codes implemented in Pytorch.
+  This tutorial explains the DDQ codes implemented in Pytorch.
   Source codes are available at https://github.com/MiuLab/DDQ
 
 ## Dataset Explained
-  This section reports the brief usage of dataset to build env.
-  The dataset is partly drived from DSTC-8
+  This section reports the brief usage of the dataset to build env.
+  The dataset is partly driven by DSTC-8
   See: ***src\deep_dialog\data***
   
   * **Goal** 
   
-      'goal_set' is ***{'train': [], 'valid': [], 'test': [], 'all': []}***
+      `goal_set` is ***{'train': [], 'valid': [], 'test': [], 'all': []}***
       
       element as ***{'request_slots': {slot:val, ...}, 'diaact': 'request', 'inform_slots': {slot:val, ...}}***
 
@@ -28,7 +28,7 @@
       ***movie_dictionary*** is ***{slot: val_list}***
 
 ## Major Procedure
-  This section gives a overview of ***src\run.py***
+  This section gives an overview of ***src\run.py***
   
   1. Load Data: goal, kb, act/slot set, dictionary
   2. Set ***AgentDQN*** as agent, ***RuleSimulator*** as env  
