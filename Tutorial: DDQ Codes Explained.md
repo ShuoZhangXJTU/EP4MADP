@@ -3,6 +3,7 @@
   Source codes are available at https://github.com/MiuLab/DDQ
 
 ## Dataset Explained
+  This section reports the brief usage of dataset to build env.
   The dataset is partly drived from DSTC-8
   See: ***src\deep_dialog\data***
   
@@ -27,7 +28,7 @@
       ***movie_dictionary*** is ***{slot: val_list}***
 
 ## Major Procedure
-  See: ***src\run.py***
+  This section gives a overview of ***src\run.py***
   
   1. Load Data: goal, kb, act/slot set, dictionary
   2. Set ***AgentDQN*** as agent, ***RuleSimulator*** as env  
@@ -44,3 +45,16 @@
           6. agent ***train*** and ***reset_dqn_target***
           7. train ***world_model*** if set to
   
+## Detailed Procedures
+  This section gives a detailed look at each procedure function.
+  
+  * **warm_start_simulation** 
+  
+      This is used to boost ***world_model***
+      1. ***record_training_data*** and ***record_training_data_for_user***
+      2. train ***world_model*** if para: boosted
+  
+  
+ 
+## Models
+  This section gives a detailed look at each model.
