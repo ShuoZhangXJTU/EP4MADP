@@ -7,17 +7,13 @@
   See: ***src\deep_dialog\data***
   
   * **Goal** 
-  
-      Goal is loaded from ***user_goals_first_turn_template.part.movie.v1.new.p***
 
-      ***goal_set*** has a form of ***{'train': [], 'valid': [], 'test': [], 'all': []}***, 
+      ***goal_set*** is ***{'train': [], 'valid': [], 'test': [], 'all': []}***, 
       with element as ***{'request_slots': {slot:val, ...}, 'diaact': 'request', 'inform_slots': {slot:val, ...}}***
 
   * **Knowledge Base (KB)** 
-  
-      KB is loaded from ***movie_kb.1k.new.p***
       
-      ***movie_kb*** has a form of ***{ID:{slot:val, ...}}***
+      ***movie_kb*** is ***{ID:{slot:val, ...}}***
   
   * **Act / Slot Set** 
   
@@ -26,7 +22,8 @@
       ***slot_set*** is ***{slot: ID, ...}***
 
   * ***Dictionary***
-      See 
+      
+      ***movie_dictionary*** is ***{slot: val_list}***
 
 ## Major Procedure
   See: ***src\run.py***
