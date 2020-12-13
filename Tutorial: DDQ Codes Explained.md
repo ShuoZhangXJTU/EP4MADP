@@ -73,5 +73,33 @@
   This section gives a detailed look at each Module.
 
  
-## Models 
+## Algorithms 
   This section gives a detailed look at each model.
+
+### DQN
+  Copied from [https://github.com/ConvLab/ConvLab/blob/master/convlab/agent/algorithm/dqn.py]
+    ```
+    1. Collect some examples by acting in the environment and store them in a replay memory
+    2. Every K steps sample N examples from replay memory
+    3. For each example calculate the target (bootstrapped estimate of the discounted value of the state and action taken), y, using a neural network to approximate the Q function. s' is the next state following the action actually taken.
+            y_t = r_t + gamma * argmax_a Q(s_t', a)
+    4. For each example calculate the current estimate of the discounted value of the state and action taken
+            x_t = Q(s_t, a_t)
+    5. Calculate L(x, y) where L is a regression loss (eg. mse)
+    6. Calculate the gradient of L with respect to all the parameters in the network and update the network parameters using the gradient
+    7. Repeat steps 3 - 6 M times
+    8. Repeat steps 2 - 7 Z times
+    9. Repeat steps 1 - 8
+    ```
+    
+### PPO
+  Copied from [https://github.com/ConvLab/ConvLab/blob/master/convlab/agent/algorithm/ppo.py]
+    ```
+    for iteration = 1, 2, 3, ... do
+        for actor = 1, 2, 3, ..., N do
+            run policy pi_old in env for T timesteps
+            compute advantage A_1, ..., A_T
+        end for
+        optimize surrogate L wrt theta, with K epochs and minibatch size M <= NT
+    end for
+    ```
