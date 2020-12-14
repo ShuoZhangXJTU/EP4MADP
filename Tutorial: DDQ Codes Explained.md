@@ -3,6 +3,106 @@
   Source codes are available at https://github.com/MiuLab/DDQ
 
 ## Dataset Explained
+The Microsoft Research dataset available at https://github.com/xiul-msr/e2e_dialog_challenge contains three single domains of movie, restaurant and taxi:
+
+|Task|Intents|Slots|Dialogues|
+| -----| ----- | ----- | ----- |
+|Movie-Ticket Booking|11|29|2890|
+|Restaurant Reservation|11|30|4103|
+|Taxi Ordering|11|29|3094|
+
+### SL Dataset for Dialog Policy
+`movie_all_wState.p`, `restaurant_all_wState.p` and `taxi_all_wState.p` available at https://github.com/leishu02/EMNLP2019_gCAS/tree/master/data
+
+* To **load data with python3**, apply `rb` in `open` and `latin1` in `pickle.load` to avoid errors.
+
+    ```
+    data = pickle.load(open('movie_all_wState.p', 'rb'), encoding='latin1')
+    ```
+* **Data format** 
+
+    `data` is a dict of `{ID:[turn_dict], ...}`
+
+    `turn_dict` is a dict with keys as: `state`, `msr_agent_act`, `agent_act`, `msr_user_act`, `user_act`, `turn_id` 
+    
+    * `state`
+    
+        ```
+        {
+          'agent_action': None, 
+          
+          'user_action': {
+              'request_slots': {'ticket': 'UNK'}, 
+              'turn': 0, 
+              'speaker': 'user', 
+              'inform_slots':  {'city': 'Seattle', ...}, 
+              'diaact': 'request'
+          }, 
+          
+          'turn': 1, 
+          
+          'current_slots': {
+              'request_slots': {'ticket': 'UNK'}, 
+              'agent_request_slots': {}, 
+              'inform_slots': {'city': 'Seattle', ...}, 
+              'proposed_slots': {}
+          },
+          
+          'kb_results_dict': {'city': 463, ...}, 
+          
+          'history': [{
+                  'request_slots': {'ticket': 'UNK'}, 
+                  'turn': 0, 
+                  'speaker': 'user', 
+                  'inform_slots': {'city': 'Seattle', ...}, 
+                  'diaact': 'request'}
+          ]
+       }
+
+        ```
+                    
+    * `msr_agent_act`
+
+        ```
+        {
+          'act_slot_response': {
+              'request_slots': {}, 
+              'turn': 1, 
+              'diaact': 'inform', 
+              'inform_slots': {
+                  'city': 'Seattle', ...
+              }
+          }, 
+          'act_slot_response_slot': None
+        }
+        ```
+
+    * `agent_act`
+
+        ```
+        [('inform', {'taskcomplete': '', 'numberofpeople': '2', ...}), ...]
+        ```
+
+    * `msr_user_act` 
+
+        ```
+        {
+          'request_slots': {'ticket': 'UNK'}, 
+          'diaact': 'request', 
+          'inform_slots': {'city': 'Seattle', ...}
+        }
+        ```
+
+    * `user_act`
+
+      ```
+        [('request', {'city': 'Seattle', ...}), ...]
+      ```
+    
+    * `turn_id` is of int type
+    
+
+### RL Environment for Dialog Policy
   This section reports the brief usage of the dataset to build env.
   The dataset is partly driven by DSTC-8
   See: `src\deep_dialog\data`
@@ -77,7 +177,7 @@
   This section gives a detailed look at each model.
 
 ### DQN
-  Copied from [https://github.com/ConvLab/ConvLab/blob/master/convlab/agent/algorithm/dqn.py]
+  Copied from https://github.com/ConvLab/ConvLab/blob/master/convlab/agent/algorithm/dqn.py
   
     ```
     1. Collect some examples by acting in the environment and store them in a replay memory
@@ -94,7 +194,7 @@
     ```
     
 ### PPO
-  Copied from [https://github.com/ConvLab/ConvLab/blob/master/convlab/agent/algorithm/ppo.py]
+  Copied from https://github.com/ConvLab/ConvLab/blob/master/convlab/agent/algorithm/ppo.py
   
     ```
     for iteration = 1, 2, 3, ... do
