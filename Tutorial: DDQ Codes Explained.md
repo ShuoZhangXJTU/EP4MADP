@@ -126,6 +126,13 @@ The Microsoft Research dataset available at https://github.com/xiul-msr/e2e_dial
   * `Dictionary`
   
       `movie_dictionary` is `{slot: val_list}`
+      
+  * `state`
+  
+    `state` is a dict with keys `history_slots`, `infrom_slots`, `request_slots`, `rest_slots`, `turn`, `diaact`
+  
+  * `act`
+  
 
 ## Major Procedure
   This section gives an overview of `src\run.py`, note every time, we train in single domain, not joint space.
