@@ -180,7 +180,22 @@ The Microsoft Research dataset available at https://github.com/xiul-msr/e2e_dial
 
 ## Modules 
   This section gives a detailed look at each Module.
-
+ 
+### DialogManager
+  Brief Intro on whole interaction procedure.
+  1. `initialize_episode`
+      1. init `state_tracker`, empty `state` 
+      2. init `running_user`, empty `state`, sample `goal`, sample first `user_action`
+  2. loop `next_turn`
+      1. get raw `state` and pass to `agent.state_to_action` to get raw `agent_action`
+      2. `state_tracker` update
+      3. get `state_user` and env return `user_action`
+          1. `self.state` turn += 2
+          2. vectorize `s` and encode `self.sample_goal`
+          3. call `predict` and instantiate `user_action`
+          4. fill first `inform_slot` with corresponding `goal` if possible, else fill `I_DO_NOT_CARE`
+      4. `state_traker` update
+  
  
 ## Algorithms 
   This section gives a detailed look at each model.
