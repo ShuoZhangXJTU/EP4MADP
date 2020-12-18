@@ -185,7 +185,7 @@ The Microsoft Research dataset available at https://github.com/xiul-msr/e2e_dial
   Brief Intro on whole interaction procedure.
   1. `initialize_episode`
       1. init `state_tracker`, empty `state` 
-      2. init `running_user`, empty `state`, sample `goal`, sample first `user_action`
+      2. init `running_user`, empty `state`, sample `goal` (Note: goal is shared between `RuleSimulator` and `world_model`), sample first `user_action`
   2. loop `next_turn`
       1. get raw `state` and pass to `agent.state_to_action` to get raw `agent_action`
       2. `state_tracker` update
